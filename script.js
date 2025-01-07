@@ -30,6 +30,7 @@ function onSuccess(position){
 function onError(error){
     infotxt.innerHTML=error.message;
     infotxt.classList.add("error");
+    navigator.geolocation.getCurrentPosition(onSuccess,onError);
 }
 function requestApi(city){
      let api=`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=805c78e0cba08155ec57d0de457be73c`;
